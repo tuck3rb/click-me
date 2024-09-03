@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
             onPressed: _decrementCounter,
@@ -130,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Icon(Icons.remove),
           ), 
           // const Spacer(),
+          const SizedBox(width: 20),
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
