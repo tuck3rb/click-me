@@ -68,28 +68,29 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _decrementCounter() {
+  void _decrementCounter() { // New button's mechanics
     setState(() {
-      if (_counter - 1 <=0) {
+      if (_counter - 1 <=0) { // Will not let user go below 0
         _counter = 0;
-      } else {
+      } else { // Regular functionality, subtracts
       _counter--;
       }
     });
   }
 
-  Color _getButtonColorInc() {
+  Color _getButtonColorInc() { //Changes color of increment button
     if (_counter % 10 == 0 && _counter != 0) {
       return Colors.deepOrange; // Hendrix Orange for multiples of 10
     } else {
-      return Colors.purpleAccent; // Deep Purple
+      return Colors.purpleAccent; // Default
     }
   }
-  Color _getButtonColorDec() {
+
+  Color _getButtonColorDec() { // Changes color of decrement button
     if (_counter == 0) {
-      return const Color.fromARGB(255, 178, 139, 185); // Hendrix Orange for multiples of 10
+      return const Color.fromARGB(255, 178, 139, 185); // Grayed out to show it won't work
     } else {
-      return Colors.purpleAccent; // Deep Purple
+      return Colors.purpleAccent; // Default
     }
   }
 
@@ -140,21 +141,21 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Row(
+      floatingActionButton: Row( // Created a row to hold my two buttons
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
+          FloatingActionButton( // Subtract button
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
-            backgroundColor: _getButtonColorDec(),
+            backgroundColor: _getButtonColorDec(), // New button colors
             child: const Icon(Icons.remove),
           ), 
           // const Spacer(),
-          const SizedBox(width: 20),
-          FloatingActionButton(
+          const SizedBox(width: 20), // Functions as a spacer
+          FloatingActionButton( // Add button from before
             onPressed: _incrementCounter,
             tooltip: 'Increment',
-            backgroundColor: _getButtonColorInc(),
+            backgroundColor: _getButtonColorInc(), // New button colors
             child: const Icon(Icons.add)
           ), // This trailing comma makes auto-formatting nicer for build methods.
         ],
