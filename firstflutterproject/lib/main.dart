@@ -70,8 +70,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _decrementCounter() {
     setState(() {
+      if (_counter - 1 <=0) {
+        _counter = 0;
+      } else {
       _counter--;
+      }
     });
+  }
+
+  Color _getButtonColorInc() {
+    if (_counter % 10 == 0 && _counter != 0) {
+      return Colors.deepOrange; // Hendrix Orange for multiples of 10
+    } else {
+      return Colors.purpleAccent; // Deep Purple
+    }
+  }
+  Color _getButtonColorDec() {
+    if (_counter == 0) {
+      return const Color.fromARGB(255, 178, 139, 185); // Hendrix Orange for multiples of 10
+    } else {
+      return Colors.purpleAccent; // Deep Purple
+    }
   }
 
   @override
@@ -127,6 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
+            backgroundColor: _getButtonColorDec(),
             child: const Icon(Icons.remove),
           ), 
           // const Spacer(),
@@ -134,6 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
+            backgroundColor: _getButtonColorInc(),
             child: const Icon(Icons.add)
           ), // This trailing comma makes auto-formatting nicer for build methods.
         ],
