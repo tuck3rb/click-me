@@ -121,30 +121,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-<<<<<<< HEAD
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: _incrementCounter,
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-      ), 
-          FloatingActionButton(
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
-            child: const Icon(Icons.remove)
-=======
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+            child: const Icon(Icons.remove),
       ), 
-      floatingActionButton2: FloatingActionButton(
-        onPressed: _decrementCounter,
-        tooltip: 'Decrement',
-        child: const Icon(Icon.line)
->>>>>>> c22490864652b92c059687b357fdabc2690d7e89
+          FloatingActionButton(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            child: const Icon(Icons.add)
       ), // This trailing comma makes auto-formatting nicer for build methods.
         ],
       )
